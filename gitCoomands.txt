@@ -1,3 +1,13 @@
+GitHub URL's
+
+git@github.com:Saifu1221/learnPython.git
+https://github.com/Saifu1221/learnPython.git
+
+
+Adding and removing url:
+git remote rm origin
+git remote add origin https://github.com/Saifu1221/learnPython.git
+
 Undo last commit:
 $ git commit ...              (1)
 $ git reset --soft HEAD~1     (2)
@@ -32,3 +42,8 @@ git checkout $(git rev-list -n 1 HEAD -- "$file")^ -- "$file"
 
 Removing from staging area
 git reset HEAD fileName
+
+
+
+To see remote origin url:
+git remote show origin
