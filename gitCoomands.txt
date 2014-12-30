@@ -1,0 +1,56 @@
+GitHub URL's
+
+git@github.com:Saifu1221/learnPython.git
+https://github.com/Saifu1221/learnPython.git
+
+Pass Key::
+saifu
+
+Adding and removing url:
+git remote rm origin
+git remote add origin https://github.com/Saifu1221/learnPython.git
+
+Undo last commit:
+$ git commit ...              (1)
+$ git reset --soft HEAD~1     (2)
+$ edit                        (3)
+$ git add ....                (4)
+$ git commit -c ORIG_HEAD     (5)
+
+1. This is what you want to undo
+
+2. This is most often done when you remembered what you just committed is incomplete, or you misspelled your commit message, or both.
+	Leaves working tree as it was before "reset".
+3. Make corrections to working tree files.
+4. Stage changes for commit.
+5. Commit the changes, reusing the old commit message. "reset" copied the old head to .git/ORIG_HEAD; commit with '-c ORIG_HEAD' starts
+	with the log message from the old commit and allows you to edit it. If you do not need to edit the message further, you can give -C 
+	option instead.
+
+	
+Undo staged files(unstaging):
+git rm --cached fileName
+
+
+
+List branches that contain a given commit:
+git branch --contains <commit-hash>
+
+
+Copy a version of a single file from one git branch to another
+git checkout otherbranch myfile.txt
+
+Restore a deleted file in a Git repo
+git checkout $(git rev-list -n 1 HEAD -- "$file")^ -- "$file"
+
+Removing from staging area
+git reset HEAD fileName
+
+
+
+To see remote origin url:
+git remote show origin
+
+
+Making an alias:
+git config --global alias.co "checkout"
